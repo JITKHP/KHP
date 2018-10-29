@@ -14,12 +14,25 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     m_Translator = new QTranslator();
-    QSettings settings("JIT", "Language");
-    QString sysLang = QLocale::system().name();
-    QString lang = settings.value("Language", "chinese").toString();
-    QString path = QCoreApplication::applicationDirPath()+"\\"+lang+".qm";
-    bool bRet = m_Translator->load(path);      //利用翻译器，载入qm文件
-    qApp->installTranslator(m_Translator);     //本程序安装该翻译器
+  //  QSettings settings("JIT", "Language");
+    //QString sysLang = QLocale::system().name();
+    //QString lang = settings.value("Language", "chinese").toString();
+    //QString path = QCoreApplication::applicationDirPath()+"\\"+lang+".qm";
+    //bool bRet = m_Translator->load(path);      //利用翻译器，载入qm文件
+    //qApp->installTranslator(m_Translator);     //本程序安装该翻译器
+    ui->action_deutsch->setChecked(false);
+    ui->action_korean->setChecked(false);
+    ui->action_japanese->setChecked(false);
+    ui->action_english->setChecked(false);
+
+    qApp->removeTranslator(m_Translator);
+    //QString path = QCoreApplication::applicationDirPath()+"\/"+"chinese.qm";
+    QString path=".././chinese.qm";
+    m_Translator->load(path);
+    qApp->installTranslator(m_Translator);
+    ui->retranslateUi(this);
+
+
 
 }
 

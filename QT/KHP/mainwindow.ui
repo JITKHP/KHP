@@ -35,6 +35,7 @@
     <addaction name="separator"/>
     <addaction name="action_7"/>
     <addaction name="action_8"/>
+    <addaction name="action_6"/>
     <addaction name="separator"/>
     <addaction name="action_10"/>
    </widget>
@@ -188,6 +189,11 @@
    </property>
    <property name="text">
     <string>Deutsch</string>
+   </property>
+  </action>
+  <action name="action_6">
+   <property name="text">
+    <string>最近</string>
    </property>
   </action>
  </widget>
